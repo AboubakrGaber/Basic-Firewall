@@ -10,8 +10,8 @@ def log_message(message, log_type="INFO"):
     with open(log_file_path, "a") as log_file:
         log_file.write(log_entry + "\n")
 
-ALLOWED_IPS = ["192.168.1.1", "10.0.0.5", "192.168.100.4","192.168.100.200"]
-BLOCKED_IPS = ["192.168.1.100", "172.16.0.10"]
+ALLOWED_IPS = [] #Add Your OWn
+BLOCKED_IPS = [] #Add Your Own
 BLOCKED_PORTS = [22, 80]
 ALLOWED_PORTS = [8080, 1234, 443]
 ALERT_THRESHOLD = 5
@@ -79,3 +79,4 @@ if block_counter >= ALERT_THRESHOLD:
     log_message(f"ALERT: High number of blocked packets ({block_counter})", "CRITICAL")
 
 log_message(f"Log saved to {log_file_path}", "INFO")
+
